@@ -1,0 +1,80 @@
+{
+  "name": "Universal Downloader Bot",
+  "description": "No-command Telegram bot that auto-detects links and downloads media in original quality.",
+  "repository": "",
+  "keywords": ["python", "telegram", "pyrogram", "yt-dlp", "downloader"],
+  "stack": "container",
+  "env": {
+    "API_ID": {
+      "description": "Get this from my.telegram.org (your own account, API development tools).",
+      "value": "",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Get this from my.telegram.org alongside API_ID.",
+      "value": "",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Create a bot with @BotFather and paste its token here.",
+      "value": "",
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "Your own numeric Telegram user ID (send /id to any userinfo bot to get it).",
+      "value": "",
+      "required": true
+    },
+    "LOG_GROUP": {
+      "description": "Optional: numeric ID of a group/channel to receive download logs.",
+      "value": "",
+      "required": false
+    },
+    "DOWNLOAD_PATH": {
+      "description": "Local folder for in-progress downloads.",
+      "value": "downloads",
+      "required": false
+    },
+    "TEMP_PATH": {
+      "description": "Local folder for temporary files.",
+      "value": "temp",
+      "required": false
+    },
+    "MAX_FILE_SIZE": {
+      "description": "Max upload size in bytes. Default is 4 GB (4294967296).",
+      "value": "4294967296",
+      "required": false
+    },
+    "MAX_CONCURRENT_DOWNLOADS": {
+      "description": "How many downloads can run at the same time.",
+      "value": "3",
+      "required": false
+    },
+    "AUTO_UPDATE_YTDLP": {
+      "description": "Auto-check PyPI and upgrade yt-dlp on a schedule (true/false).",
+      "value": "true",
+      "required": false
+    },
+    "YTDLP_CHECK_INTERVAL": {
+      "description": "Seconds between yt-dlp auto-update checks. Default 86400 (24h).",
+      "value": "86400",
+      "required": false
+    },
+    "COOKIES_FILE": {
+      "description": "Optional: path to your own cookies.txt for content only your account can access. Never obtain cookies or session data from a third party.",
+      "value": "",
+      "required": false
+    },
+    "PROXY_URL": {
+      "description": "Optional: outbound proxy, e.g. http://user:pass@host:port",
+      "value": "",
+      "required": false
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  }
+}
